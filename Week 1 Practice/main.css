@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:opsz,wght@8..144,400;8..144,700&display=swap");
+li:nth-child(5n) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+div {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid #d0d0d0;
+}
+header h1 {
+  margin: 0;
+}
+header h1 a {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  font-size: 5rem;
+  transition: none 0.3s ease;
+}
+header h1 a:hover, header h1 a:active {
+  color: #333;
+}
+
+nav {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d0d0d0;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.7rem;
+}
+nav a {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+nav a:visited {
+  color: #666;
+}
+nav a:hover {
+  color: #00ddff;
+}
+nav a:active {
+  color: #deb887;
+}
+
+main {
+  padding: 2rem 0;
+}
+main article {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+}
+main article:last-child {
+  border-bottom: none;
+}
+main article h2.post-date {
+  font-family: "Lora", serif;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+  font-weight: 400;
+}
+main article .post-content h2 a {
+  font-family: "Lora", serif;
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+main article .post-content h2 a:hover {
+  color: #00ddff;
+}
+main article .post-content figure {
+  margin: 0;
+  text-align: center;
+  padding: 1rem 0;
+}
+main article .post-content img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #d0d0d0;
+  padding: 0.2rem;
+}
+main article .post-content p {
+  line-height: 1.6;
+}
+main article .post-content p a {
+  color: #666;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+main article .post-content p a:hover {
+  color: #00ddff;
+}
+
+@media (min-width: 768px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+  nav {
+    margin-top: 1rem;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  main article {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1rem;
+    padding-bottom: 0;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  main article:last-child {
+    border-bottom: none;
+  }
+  main article h2.post-date {
+    margin-top: 0;
+    text-align: right;
+    border-bottom: none;
+  }
+  main article .post-content {
+    border-left: 1px solid #d0d0d0;
+    padding-left: 1rem;
+  }
+  main article .post-content figure {
+    margin-right: 1rem;
+  }
+  main article .post-content::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

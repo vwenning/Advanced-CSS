@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:opsz,wght@8..144,400;8..144,700&display=swap");
+
+// ------------------------------
+// Variables
+// ------------------------------
+$font-body: Helvetica, Arial, sans-serif;
+$font-heading: "Lora", serif;
+$color-text: #333;
+$color-light: #f4f4f4;
+$color-accent: #00ddff;
+$color-active: #deb887;
+$color-border: #d0d0d0;
+$max-width: 960px;
+
+// ------------------------------
+// Mixins
+// ------------------------------
+@mixin transition($property, $time: 0.3s, $ease: ease) {
+  transition: $property $time $ease;
+}
+
+// ------------------------------
+// Global styling
+// ------------------------------
+li:nth-child(5n) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-body;
+  background-color: $color-light;
+  color: $color-text;
+}
+
+div {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// ------------------------------
+// Header & Navigation
+// ------------------------------
+header {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid $color-border;
+
+  h1 {
+    margin: 0;
+
+    a {
+      font-family: $font-heading;
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+      font-size: 5rem;
+      @include transition(none);
+
+      &:hover,
+      &:active {
+        color: $color-text;
+      }
+    }
+  }
+}
+
+nav {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid $color-border;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+  }
+
+  a {
+    font-family: $font-heading;
+    font-weight: 400;
+    color: #666;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    @include transition(color);
+
+    &:visited {
+      color: #666;
+    }
+    &:hover {
+      color: $color-accent;
+    }
+    &:active {
+      color: $color-active;
+    }
+  }
+}
+
+// ------------------------------
+// Main & Article
+// ------------------------------
+main {
+  padding: 2rem 0;
+
+  article {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h2.post-date {
+      font-family: $font-heading;
+      text-transform: uppercase;
+      text-align: right;
+      font-size: 2rem;
+      color: black;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $color-border;
+      font-weight: 400;
+    }
+
+    .post-content {
+      h2 a {
+        font-family: $font-heading;
+        color: $color-text;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 2rem;
+        @include transition(color);
+
+        &:hover {
+          color: $color-accent;
+        }
+      }
+
+      figure {
+        margin: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid $color-border;
+        padding: 0.2rem;
+      }
+
+      p {
+        line-height: 1.6;
+
+        a {
+          color: #666;
+          text-decoration: underline;
+          @include transition(color);
+
+          &:hover {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// Responsive
+// ------------------------------
+@media (min-width: 768px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+
+    ul {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  }
+
+  main {
+    article {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1rem;
+      padding-bottom: 0;
+      border-bottom: 1px solid $color-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      h2.post-date {
+        margin-top: 0;
+        text-align: right;
+        border-bottom: none;
+      }
+
+      .post-content {
+        border-left: 1px solid $color-border;
+        padding-left: 1rem;
+
+        figure {
+          margin-right: 1rem;
+        }
+
+        &::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+    }
+  }
+}
