@@ -1,6 +1,6 @@
-/* -- FONT IMPORTS -- */
 /* -- RECURSIVE VARIABLE FONT -- */
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght,MONO,CASL@300..1000,0..1,0..1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..800,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700;800&family=Source+Sans+3:wght@400;500&family=Source+Code+Pro&display=swap");
 
 /* -- MODULAR SCALE & TYPOGRAPHIC FLOW SETUP -- */
 html {
@@ -20,20 +20,40 @@ html {
     --text-color: #333;
     --bg-color: #fff;
     --alert-border: #444;
+
+    /* Recursive font variation axis values */
+    --mono: 1;  /* 1 = monospace, 0 = natural width */
+    --casl: 0;  /* 0 = linear, 1 = casual */
+    --wght: 400; /* lighter body text for contrast */
+    --slnt: 0;  
+    --crsv: 0.5; 
 }
 
-/* -- BASE STYLES -- */
+/* -- APPLY FONT VARIATIONS FOR BODY TEXT -- */
 body {
-    background-color: var(--bg-color);
+    background-color: #f0f0f0; /* light gray behind the page */
     color: var(--text-color);
-    font-family: 'Source Serif 4', serif;
+    font-family: 'Recursive', monospace;
     line-height: 1.45;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    padding: 2rem 1rem; /* space around page */
+    font-variation-settings: 
+        "MONO" var(--mono),
+        "CASL" var(--casl),
+        "wght" var(--wght),
+        "slnt" var(--slnt),
+        "CRSV" var(--crsv);
 }
 
+/* -- PAGE CONTAINER WITH SHADOW -- */
 .page-container {
     max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    margin: 2rem auto;
+    padding: 2rem 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .content-container {
@@ -51,6 +71,12 @@ body {
     line-height: 1;
     margin-bottom: 0.5rem;
 }
+
+.chapter-header strong {
+    margin-right: 1rem; /* space between page number and "Chapter X" */
+    display: inline-block; /* ensures margin works properly */
+}
+
 
 .dots-line {
     font-size: var(--s-2);
@@ -82,10 +108,12 @@ h3 {
     margin-bottom: var(--s-1);
 }
 
+/* -- PARAGRAPHS -- */
 p {
     margin-top: var(--s1);
     margin-bottom: var(--s1);
     text-align: justify;
+    text-justify: inter-word;
 }
 
 /* -- TYPOGRAPHIC VARIETY -- */
@@ -97,14 +125,25 @@ code {
     border-radius: 2px;
 }
 
-strong { font-weight: 700; }
 em { font-style: italic; }
+
+/* -- STRONG TEXT FIXED FOR CONTRAST -- */
+strong {
+    font-variation-settings: 
+        "MONO" var(--mono),
+        "CASL" var(--casl),
+        "wght" 700,   /* bold */
+        "slnt" var(--slnt),
+        "CRSV" var(--crsv);
+    font-weight: 700;
+    color: #111; /* slightly darker than body for emphasis */
+}
 
 /* -- ALERT BOX STYLING -- */
 .alert-container {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;  /* Change from 1rem to 0.75rem or adjust as needed */
+    align-items: flex-start;
+    gap: 0.75rem;
     margin: 1.5rem 0;
     padding-right: 1rem;
 }
@@ -141,7 +180,19 @@ em { font-style: italic; }
     text-align: justify;
 }
 
-/* -- LIST STYLING -- */
+/* -- ALERT STRONG LESS BOLD -- */
+.alert-text strong {
+    font-variation-settings: 
+        "MONO" var(--mono),
+        "CASL" var(--casl),
+        "wght" 550,   /* slightly lighter than main strong */
+        "slnt" var(--slnt),
+        "CRSV" var(--crsv);
+    font-weight: 550;
+    color: #111; /* same slightly darker color */
+}
+
+/* -- LIST STYLING WITH BOLD BEFORE DASH -- */
 .tip-list {
     list-style: none;
     padding-left: 0;
@@ -159,7 +210,9 @@ em { font-style: italic; }
     content: '▶';
     position: absolute;
     left: 0;
-    top: 0;
+    top: 0.1em;
     font-size: 0.7em;
     color: #000;
 }
+
+/* -- TIP LIST STRONG INHERITS FIX FROM ABOVE -- */
