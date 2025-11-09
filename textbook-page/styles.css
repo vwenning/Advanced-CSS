@@ -1,0 +1,165 @@
+/* -- FONT IMPORTS -- */
+/* -- RECURSIVE VARIABLE FONT -- */
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght,MONO,CASL@300..1000,0..1,0..1&display=swap');
+
+/* -- MODULAR SCALE & TYPOGRAPHIC FLOW SETUP -- */
+html {
+    font-size: 18px; /* Base 1rem = 18px */
+}
+
+:root {
+    --ratio: 1.333;
+    --s-2: calc(1rem / (var(--ratio) * var(--ratio)));
+    --s-1: calc(1rem / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+
+    --primary-color: #000;
+    --text-color: #333;
+    --bg-color: #fff;
+    --alert-border: #444;
+}
+
+/* -- BASE STYLES -- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Source Serif 4', serif;
+    line-height: 1.45;
+}
+
+.page-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.content-container {
+    max-width: 70ch;
+    margin: 0;
+    padding: 0;
+}
+
+/* -- PAGE NUMBER AND CHAPTER HEADER -- */
+.chapter-header {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: var(--s-1);
+    color: #777;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.dots-line {
+    font-size: var(--s-2);
+    color: #999;
+    letter-spacing: 0.3em;
+    margin-bottom: var(--s1);
+    overflow: hidden;
+}
+
+/* -- HEADINGS -- */
+h2, h3 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin-top: var(--s2);
+    margin-bottom: var(--s-1);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: var(--s2);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-top: var(--s3);
+}
+
+h3 {
+    font-size: var(--s1);
+    font-weight: 700;
+    margin-top: var(--s3);
+    margin-bottom: var(--s-1);
+}
+
+p {
+    margin-top: var(--s1);
+    margin-bottom: var(--s1);
+    text-align: justify;
+}
+
+/* -- TYPOGRAPHIC VARIETY -- */
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+    background-color: #f7f7f7;
+    padding: 0.1em 0.2em;
+    border-radius: 2px;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* -- ALERT BOX STYLING -- */
+.alert-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;  /* Change from 1rem to 0.75rem or adjust as needed */
+    margin: 1.5rem 0;
+    padding-right: 1rem;
+}
+
+.alert-content {
+    display: flex;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.alert-icon {
+    background-image: url("images/alert.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+.alert-line {
+    width: 2px;
+    background-color: #999;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.alert-text {
+    margin: 0;
+    margin-left: 0.75rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    text-align: justify;
+}
+
+/* -- LIST STYLING -- */
+.tip-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: var(--s0);
+}
+
+.tip-list li {
+    margin-bottom: var(--s1);
+    padding-left: 1.5em;
+    position: relative;
+    text-align: justify;
+}
+
+.tip-list li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.7em;
+    color: #000;
+}

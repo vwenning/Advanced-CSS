@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: File Management</title>
+    <!-- Linking to the external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="chapter-header"><strong>126</strong> Chapter 6</div>
+        <div class="dots-line">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</div>
+        
+        <div class="content-container">
+            <p>
+                For example, say your developers have come up with the perfect amortization program and you want to install it on the workgroup server for other systems to remotely mount and use. Because this is a third-party or custom application, the logical place for it is in <code>/usr/local/appname</code>, possibly with a link to the program binary in the <code>/usr/local/bin</code> directory (because that's in the path).
+            </p>
+
+            <!-- FIRST ALERT -->
+            <aside class="alert-container" role="alert">
+                <!-- Icon element is empty, the image is provided by CSS -->
+                <div class="alert-icon"></div>
+                <div class="alert-content">
+                    <div class="alert-line"></div>
+                    <p class="alert-text">
+                        If given a choice between putting the software package <strong>BIGPROG</strong> in the <code>/usr/local/BIGPROG</code> section and the <code>/opt/BIGPROG</code> section, it's hard to choose. <strong>Read any relevant exam question closely</strong>—the main difference being that the <em>/opt</em> section is not considered to be sharable, whereas the <em>/usr</em> section is often shared and mounted by client systems.
+                    </p>
+                </div>
+            </aside>
+
+            <section>
+                <h2>File Management Commands</h2>
+                <p>
+                    A major section of the 101 exam is dedicated to how to run commands properly with the right options and arguments. As a good sysadmin, you'll be expected to know how to create, delete, edit, set permissions on, display, move, copy, and determine the type of files and programs.
+                </p>
+            </section>
+
+            <!-- SECOND ALERT -->
+            <aside class="alert-container" role="alert">
+                <!-- Icon element is empty, the image is provided by CSS -->
+                <div class="alert-icon"></div>
+                <div class="alert-content">
+                    <div class="alert-line"></div>
+                    <p class="alert-text">
+                        You must be able to pick proper and working commands out of lists of possibilities, type in appropriate strings in fill-in-the-blank boxes, and in general show that you've run the programs and utilities in question.
+                    </p>
+                </div>
+            </aside>
+
+            <section>
+                <h3>Tips for Working with Linux Files</h3>
+                <p>
+                    Because most users and sysadmins come from a Windows or other OS background, a quick set of recommendations for the less-experienced can be of help here:
+                </p>
+
+                <!-- TIP LIST -->
+                <ul class="tip-list">
+                    <li>
+                        <strong>Hidden files aren't really hidden</strong>—They just begin with a <code>.</code>, such as the <code>.bashrc</code> and <code>.bash_profile</code> files. These are not viewable by normal users with conventional commands and switches and aren't deleted by commands such as <code>rm -f *.*</code>.
+                    </li>
+                    <li>
+                        <strong>Filenames can contain multiple periods or no period characters</strong>—The filenames <code>this.is.a.long.file</code> and <code>thisisalongfile</code> are perfectly reasonable and possible.
+                    </li>
+                    <li>
+                        <strong>Spaces in filenames look nice, but are a pain to type</strong>—Use an <code>_</code> or a <code>-</code> instead of spaces because it's neater and easier than prefixing all spaces with a <code>\</code>. (To display a space in a filename, the system shows a space prefixed with a backslash.)
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
