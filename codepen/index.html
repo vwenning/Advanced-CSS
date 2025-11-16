@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victoria's CSS Playground</title>
+  <!-- Link to external stylesheet for styling the page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Main container for the simulated Codepen interface -->
+  <div class="codepen">
+
+    <!-- Header section showing pen details and user controls -->
+    <header class="pen">
+      <div class="pen__details">
+        <h1>Victoria's CSS Playground</h1> <!-- Pen title -->
+        <p class="pen__author">A Pen by Victoria Wenning</p> <!-- Author info -->
+      </div>
+      <!-- Action buttons in the header -->
+      <button class="button button--dirty">Save</button> <!-- Save changes -->
+      <button class="button">Save As Private</button> <!-- Save privately -->
+      <button class="button">Settings</button> <!-- Pen settings -->
+      <button class="button">Change View</button> <!-- Change layout/view -->
+      <!-- Author profile picture -->
+      <img src="image/VictoriaSquare.jpg" alt="Victoria Wenning" height="44">
+    </header>
+
+    <!-- Section containing code editors (HTML, CSS, JS) -->
+    <section class="code">
+
+      <!-- HTML editor -->
+      <div class="editor">
+        <header class="editor__header">
+          <button class="button button--small editor__settings">⚙</button> <!-- Editor settings -->
+          <h3 class="editor__heading">HTML</h3> <!-- Editor type -->
+          <button class="button button--small editor__settings">⌄</button> <!-- Minimize/expand editor -->
+        </header>
+        <div class="editor__code">
+          <!-- Line numbers for code -->
+          <div class="editor__gutter">
+            <span class="editor__number">1</span>
+          </div>
+          <!-- Textarea containing the code -->
+          <textarea class="editor__input"><p>Hello! I'm Victoria 👋</p></textarea>
+        </div>
+      </div>
+
+      <!-- CSS editor -->
+      <div class="editor">
+        <header class="editor__header">
+          <button class="button button--small editor__settings">⚙</button>
+          <h3 class="editor__heading">CSS</h3>
+          <button class="button button--small editor__settings">⌄</button>
+        </header>
+        <div class="editor__code">
+          <div class="editor__gutter">
+            <!-- Multiple line numbers -->
+            <span class="editor__number">1</span>
+            <span class="editor__number">2</span>
+            <span class="editor__number">3</span>
+          </div>
+          <!-- Textarea containing CSS code -->
+          <textarea class="editor__input">/* Victoria's custom playground */
+.codepen {
+  creativity: 100%;
+  happiness: max;
+}
+          </textarea>
+        </div>
+      </div>
+
+      <!-- JS editor -->
+      <div class="editor">
+        <header class="editor__header">
+          <button class="button button--small editor__settings">⚙</button>
+          <h3 class="editor__heading">JS</h3>
+          <button class="button button--small editor__settings">⌄</button>
+        </header>
+        <div class="editor__code">
+          <div class="editor__gutter">
+            <span class="editor__number">1</span>
+          </div>
+          <!-- Textarea containing JS code -->
+          <textarea class="editor__input">const victoria = 'creative';
+const penName = 'CSS Adventure';</textarea>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Preview section where live results of the code are displayed -->
+    <section class="preview">
+      <iframe src="https://css-tricks.com" frameborder="0"></iframe> <!-- Example live preview -->
+    </section>
+
+    <!-- Footer section with additional tools/settings -->
+    <footer class="settings">
+      <button class="button button--small button--black">Console</button> <!-- Opens console -->
+      <button class="button button--small button--black">Assets</button> <!-- Access assets -->
+      <button class="button button--small button--black">⌘</button> <!-- Shortcut/help -->
+    </footer>
+
+  </div>
+</body>
+
+</html>
