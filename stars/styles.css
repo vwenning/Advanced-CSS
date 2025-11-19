@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.sky {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.trees {
+    position: absolute;
+    bottom: -280px;
+    right: 600px;
+
+    width: 1400px;
+    height: auto;
+
+    z-index: 0;
+}
+
+.firefly {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+
+    /* Glow */
+    box-shadow:
+        0 0 8px 4px rgba(255, 255, 200, 0.8),
+        0 0 15px 8px rgba(255, 255, 150, 0.6);
+
+    /* Combine animations: twinkle + motion */
+    /* Each firefly can override motion with a different animation */
+    animation: twinkle 2s infinite ease-in-out alternate, loop 6s infinite ease-in-out 0.2s;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.6);
+        box-shadow:
+            0 0 4px 2px rgba(255, 255, 200, 0.3),
+            0 0 8px 3px rgba(255, 255, 150, 0.2);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow:
+            0 0 12px 6px rgba(255, 255, 200, 1),
+            0 0 25px 12px rgba(255, 255, 150, 0.9);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+        box-shadow:
+            0 0 6px 3px rgba(255, 255, 200, 0.5),
+            0 0 12px 6px rgba(255, 255, 150, 0.4);
+    }
+}
+
+@keyframes loop {
+    0%   { transform: translate(0,0); }
+    25%  { transform: translate(40px,-30px); }
+    50%  { transform: translate(0,-60px); }
+    75%  { transform: translate(-40px,-30px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes figure8 {
+    0%   { transform: translate(0,0); }
+    25%  { transform: translate(35px,-40px); }
+    50%  { transform: translate(0,-80px); }
+    75%  { transform: translate(-35px,-40px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes wander {
+    0%   { transform: translate(0,0); }
+    33%  { transform: translate(50px,20px); }
+    66%  { transform: translate(-20px,-40px); }
+    100% { transform: translate(0,0); }
+}
+
+
+/* Each firefly gets a unique position, path, speed, and delay */
+.f1 { top: 20%; left: 15%; animation: twinkle 2s infinite alternate, loop 6s infinite ease-in-out 0.2s; }
+.f2 { top: 70%; left: 60%; animation: twinkle 2.5s infinite alternate, figure8 8s infinite ease-in-out 1s; }
+.f3 { top: 40%; left: 85%; animation: twinkle 1.8s infinite alternate, wander 7s infinite ease-in-out 0.4s; }
+.f4 { top: 80%; left: 30%; animation: twinkle 2.3s infinite alternate, loop 5s infinite ease-in-out 0.9s; }
+.f5 { top: 10%; left: 70%; animation: twinkle 3s infinite alternate, figure8 9s infinite ease-in-out 1.2s; }
+.f6 { top: 50%; left: 40%; animation: twinkle 1.6s infinite alternate, wander 4s infinite ease-in-out 0.5s; }
+.f7 { top: 25%; left: 90%; animation: twinkle 2.7s infinite alternate, loop 6s infinite ease-in-out 0.1s; }
+.f8 { top: 60%; left: 10%; animation: twinkle 3.2s infinite alternate, figure8 10s infinite ease-in-out 1.6s; }
+.f9 { top: 35%; left: 55%; animation: twinkle 1.9s infinite alternate, wander 7s infinite ease-in-out 0.8s; }
+.f10 { top: 15%; left: 45%; animation: twinkle 2.2s infinite alternate, loop 8s infinite ease-in-out 0.3s; }
