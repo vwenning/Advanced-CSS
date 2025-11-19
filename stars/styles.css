@@ -29,6 +29,7 @@ body {
     z-index: 0;
 }
 
+
 .firefly {
     position: absolute;
     width: 6px;
@@ -71,37 +72,41 @@ body {
 }
 
 @keyframes loop {
-    0%   { transform: translate(0,0); }
-    25%  { transform: translate(40px,-30px); }
-    50%  { transform: translate(0,-60px); }
-    75%  { transform: translate(-40px,-30px); }
-    100% { transform: translate(0,0); }
+    0%   { transform: translate(0px, 0px); }
+    25%    { transform: translate(200px, 0px); }
+    50%    { transform: translate(0px, 100px); }
+    75%    { transform: translate(-300px, 0px); }
+    100%   { transform: translate(0px, 0px); }
 }
 
 @keyframes figure8 {
     0%   { transform: translate(0,0); }
-    25%  { transform: translate(35px,-40px); }
-    50%  { transform: translate(0,-80px); }
-    75%  { transform: translate(-35px,-40px); }
+    15% { transform: translate(150px,40px); }
+    30%  { transform: translate(305px,-80px); }
+    45%  { transform: translate(30,-80px); }
+    60%  { transform: translate(-305px,-40px); }
+    75%  { transform: translate(-350px,200px); }
+    90%  { transform: translate(500px,400px); }
     100% { transform: translate(0,0); }
 }
 
 @keyframes wander {
     0%   { transform: translate(0,0); }
-    33%  { transform: translate(50px,20px); }
-    66%  { transform: translate(-20px,-40px); }
+    33%  { transform: translate(100px,70px); }
+    66%  { transform: translate(-70px,-90px); }
     100% { transform: translate(0,0); }
 }
 
 
 /* Each firefly gets a unique position, path, speed, and delay */
-.f1 { top: 20%; left: 15%; animation: twinkle 2s infinite alternate, loop 6s infinite ease-in-out 0.2s; }
-.f2 { top: 70%; left: 60%; animation: twinkle 2.5s infinite alternate, figure8 8s infinite ease-in-out 1s; }
-.f3 { top: 40%; left: 85%; animation: twinkle 1.8s infinite alternate, wander 7s infinite ease-in-out 0.4s; }
-.f4 { top: 80%; left: 30%; animation: twinkle 2.3s infinite alternate, loop 5s infinite ease-in-out 0.9s; }
-.f5 { top: 10%; left: 70%; animation: twinkle 3s infinite alternate, figure8 9s infinite ease-in-out 1.2s; }
-.f6 { top: 50%; left: 40%; animation: twinkle 1.6s infinite alternate, wander 4s infinite ease-in-out 0.5s; }
-.f7 { top: 25%; left: 90%; animation: twinkle 2.7s infinite alternate, loop 6s infinite ease-in-out 0.1s; }
-.f8 { top: 60%; left: 10%; animation: twinkle 3.2s infinite alternate, figure8 10s infinite ease-in-out 1.6s; }
-.f9 { top: 35%; left: 55%; animation: twinkle 1.9s infinite alternate, wander 7s infinite ease-in-out 0.8s; }
-.f10 { top: 15%; left: 45%; animation: twinkle 2.2s infinite alternate, loop 8s infinite ease-in-out 0.3s; }
+.f1 { top: 20%; left: 15%; animation: twinkle 2s infinite alternate, loop 10s infinite ease-in-out 0.2s; }
+.f2 { top: 20%; left: 60%; animation: twinkle 2.5s infinite alternate, figure8 20s infinite ease-in-out 1s; }
+.f3 { top: 40%; left: 85%; animation: twinkle 1.8s infinite alternate, wander 20s infinite ease-in-out 0.4s; }
+.f4 { top: 80%; left: 30%; animation: twinkle 2.3s infinite alternate, loop 20s infinite ease-in-out 0.9s; }
+.f5 { top: 10%; left: 70%; animation: twinkle 3s infinite alternate, figure8 30s infinite ease-in-out 1.2s; }
+.f6 { top: 50%; left: 40%; animation: twinkle 1.6s infinite alternate, wander 14s infinite ease-in-out 0.5s; }
+.f7 { top: 25%; left: 90%; animation: twinkle 2.7s infinite alternate, loop 30s infinite ease-in-out 0.1s; }
+.f8 { top: 60%; left: 10%; animation: twinkle 3.2s infinite alternate, figure8 40s infinite ease-in-out 1.6s; }
+.f9 { top: 35%; left: 55%; animation: twinkle 1.9s infinite alternate, wander 17s infinite ease-in-out 0.8s; }
+.f10 { top: 15%; left: 45%; animation: twinkle 2.2s infinite alternate, loop 40s infinite ease-in-out 0.3s; }
+.f11 { top: 80%; left: 70%; animation: twinkle 2.8s infinite alternate, figure8 50s infinite ease-in-out 1.4s; }
