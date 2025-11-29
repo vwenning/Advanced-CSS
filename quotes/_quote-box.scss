@@ -4,12 +4,16 @@
   --preferred-width: 80%;
   --quoteColor: #b3d4e6;
 }
-
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  overflow-x: hidden;
+}
 .quote-box {
   border-radius: 20px;
   border: 4px solid var(--quoteColor);
   width: clamp(var(--min-width), var(--preferred-width), var(--max-width));
-  margin: 0 auto 2rem auto; // Added bottom margin to separate the quotes
+  margin: 0 auto 4rem auto;
   display: flex;
   padding: 3em;
   gap: 1em;
@@ -52,6 +56,7 @@
       top: -4em;
       border: 4px solid var(--quoteColor);
       box-shadow: 10px 10px 0 var(--quoteColor);
+      width: 215px;
       
       @media (max-width: 680px) {
         border-radius: 100%;
@@ -62,8 +67,24 @@
   }
 }
 
+/* Dark Mode Theme*/
 .dark-section {
   --brightness: 500%;
-  background-color: #333;
   color: white;
+  position: relative;      
+  background: none;      
+  border-color: #b3d4e6;
+}
+
+/* This creates the gray block that stretches screen-to-screen */
+.dark-section::before {
+  content: "";
+  background-color: #333;
+  position: absolute;
+  top: -2rem;
+  bottom: -2rem;
+  left: 50%;              
+  width: 100vw;        
+  transform: translateX(-50%);
+  z-index: -1; 
 }
