@@ -1,4 +1,14 @@
-/* Basic Reset */
+/* Custom Variables for easy updates */
+:root {
+    --primary: #2c3e50;
+    --accent: #18bc9c;
+    --bg-light: #f8f9fa;
+    --text-dark: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,80 +16,154 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 20px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
 header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 0;
     text-align: center;
-    padding: 2rem 0;
-    background: #2c3e50;
-    color: white;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    border-bottom: 5px solid var(--accent);
 }
 
-nav a {
-    color: #18bc9c;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style Stage Hero Section */
+.style-stage-hero {
+    background: var(--white);
+    margin: -40px auto 40px; /* Overlaps the header slightly */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.style-stage-hero h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Buttons */
+.btn {
     text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* Project Grid System */
+.btn.primary {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn.secondary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Projects Grid */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
 }
 
-.card h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #18bc9c;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 10px;
 }
 
+.card h3 {
+    color: var(--primary);
+}
+
+/* List Styling */
 ul {
     list-style: none;
 }
 
 li {
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 li a {
     text-decoration: none;
-    color: #34495e;
+    color: var(--text-dark);
+    font-size: 1.1rem;
     display: block;
-    padding: 5px;
+    padding: 8px;
     border-radius: 4px;
+    transition: background 0.2s;
 }
 
 li a:hover {
-    background-color: #ecf0f1;
-    color: #18bc9c;
+    background: var(--bg-light);
+    color: var(--accent);
+    padding-left: 15px; /* Subtle slide effect */
 }
 
+/* Footer */
 footer {
     text-align: center;
-    margin-top: 3rem;
+    padding: 40px 0;
+    color: #777;
     font-size: 0.9rem;
-    color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
 }
